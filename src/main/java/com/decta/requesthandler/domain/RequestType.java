@@ -1,0 +1,10 @@
+package com.decta.requesthandler.domain;
+
+public enum RequestType {
+    CARD_ISSUE_INDIVIDUAL,
+    CARD_ISSUE_ENTITY,
+    REGISTER_NEW_ENTITY,
+    REFERENCE_REQUEST_ENTITY,
+    REGISTER_NEW_INDIVIDUAL,
+    REFERENCE_REQUEST_INDIVIDUAL
+}
