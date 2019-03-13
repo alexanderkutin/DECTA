@@ -1,0 +1,37 @@
+{
+    "010203-12345":{
+            "personalId": "010203-12345",
+            "firstName": "Ivan",
+            "lastName": "Ivanov",
+			"dateOfBirth": "010203",
+            "regAddress": "Address 1"
+        },
+    "020304-23456":{
+            "personalId": "020304-23456",
+            "firstName": "Tumur",
+            "lastName": "Timurov",
+			"dateOfBirth": "020304",
+            "regAddress": "Address 2"
+        },
+    "030405-34567":{
+            "personalId": "030405-34567",
+            "firstName": "Andrey",
+            "lastName": "Andreev",
+			"dateOfBirth": "030405",
+            "regAddress": "Address 3"
+        },
+    "040506-45678":{
+            "personalId": "040506-45678",
+            "firstName": "Oleg",
+            "lastName": "Smirnov",
+			"dateOfBirth": "040506",
+            "regAddress": "Address 4"
+        },
+    "050607-56789":{
+            "personalId": "050607-56789",
+            "firstName": "Boris",
+            "lastName": "Denisov",
+			"dateOfBirth": "050607",
+            "regAddress": "Address 5"
+        }
+}

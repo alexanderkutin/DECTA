@@ -1,0 +1,27 @@
+{
+    "40003747907":{
+            "registrationNumber": "40003747907",
+            "name": "Company 1",
+			"legalAddress": "Address 1"
+        },
+    "45682174879":{
+            "registrationNumber": "45682174879",
+            "name": "Company 2",
+			"legalAddress": "Address 2"
+        },
+    "85235715957":{
+            "registrationNumber": "85235715957",
+            "name": "Company 3",
+			"legalAddress": "Address 3"
+        },
+    "15852647526":{
+            "registrationNumber": "15852647526",
+            "name": "Company 4",
+			"legalAddress": "Address 4"
+        },
+    "74125896383":{
+            "registrationNumber": "74125896383",
+            "name": "Company 4",
+			"legalAddress": "Address 4"
+        }
+}
