@@ -14,11 +14,11 @@ import org.mockito.junit.MockitoJUnitRunner;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.NoSuchElementException;
 
-
+import static org.assertj.core.api.Assertions.assertThatThrownBy;
 import static org.assertj.core.api.Assertions.assertThat;
-import static org.mockito.Mockito.verify;
-import static org.mockito.Mockito.when;
+import static org.mockito.Mockito.*;
 
 @RunWith(MockitoJUnitRunner.class)
 public class RequestServiceTest {
@@ -74,6 +74,7 @@ public class RequestServiceTest {
 
         ServiceReturnValue result = victim.handleRequest(request);
 
+        verify(cardIssueIndividual, times(1)).getRequestType();
         verify(cardIssueIndividual).execute(requestCaptor.capture());
         Request captorResult = requestCaptor.getValue();
 
@@ -87,6 +88,7 @@ public class RequestServiceTest {
 
         ServiceReturnValue result = victim.handleRequest(request);
 
+        verify(cardIssueIndividual, times(1)).getRequestType();
         verify(cardIssueIndividual).execute(requestCaptor.capture());
         Request captorResult = requestCaptor.getValue();
 
@@ -94,10 +96,19 @@ public class RequestServiceTest {
         assertThat(result).isEqualTo(ServiceReturnValue.NOT_VALID);
     }
 
+    @Test
+    public void shouldThrowException() {
+        when(cardIssueIndividual.getRequestType()).thenReturn(RequestType.CARD_ISSUE_ENTITY);
+
+        assertThatThrownBy(() -> victim.handleRequest(request))
+                .isInstanceOf(NoSuchElementException.class)
+                .hasMessage("No handler for such request");
+    }
+
     private Request request() {
         PersonIdDocument idDoc = new PersonIdDocument();
-        idDoc.setFirstName("Ivan");
-        idDoc.setLastName("Ivanov");
+        idDoc.setFirstName("TEST_NAME");
+        idDoc.setLastName("TEST_SURNAME");
         idDoc.setPersonId("010203-12345");
 
         Request request = new Request();
